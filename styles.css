@@ -4,7 +4,6 @@ body {
     background: #ffffff;
 }
 
-/* ===== HEADER ===== */
 header {
     background: #1b1b1b;
     color: white;
@@ -12,7 +11,6 @@ header {
     text-align: center;
 }
 
-/* ===== NAVIGATION ===== */
 nav {
     background: #e9e9e9;
 }
@@ -38,7 +36,6 @@ nav a.active {
     border-radius: 6px;
 }
 
-/* ====== LAYOUT (Desktop default) ====== */
 .layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -46,7 +43,6 @@ nav a.active {
     gap: 20px;
 }
 
-/* MAIN + ASIDE */
 main {
     background: rgb(204, 198, 198);
     padding: 20px;
@@ -59,7 +55,6 @@ aside {
     border-radius: 8px;
 }
 
-/* ===== FOOTER ===== */
 footer {
     background: #1b1b1b;
     color: white;
@@ -71,12 +66,7 @@ footer {
 footer a {
     color: #8715bc;
 }
-
-/* ======================================================
-   ================= RESPONSIVE BREAKPOINTS =================
-   ====================================================== */
-
-/* ======== 320px (Телефон) ======== */
+/* PHONE (до 480px)*/
 @media (max-width: 480px) {
     nav ul {
         flex-direction: column;
@@ -84,9 +74,16 @@ footer a {
         padding-left: 20px;
         gap: 10px;
     }
-
     .layout {
-        display: block; /* <<< ГОЛОВНЕ ВИПРАВЛЕННЯ */
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+    aside {
+        order: 1; 
+    }
+    main {
+        order: 2; 
     }
 
     main, aside {
@@ -98,14 +95,24 @@ footer a {
     }
 }
 
-/* ======== 768px (Планшет) ======== */
+/* (481px — 768px)*/
 @media (min-width: 481px) and (max-width: 768px) {
     nav ul {
         gap: 15px;
     }
 
     .layout {
-        grid-template-columns: 1.5fr 1fr;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    aside {
+        order: 1;
+    }
+
+    main {
+        order: 2;
     }
 
     body {
@@ -113,7 +120,7 @@ footer a {
     }
 }
 
-/* ======== 1200px (Невеликий десктоп) ======== */
+/*SMALL DESKTOP (769px — 1200px)*/
 @media (min-width: 769px) and (max-width: 1200px) {
     .layout {
         grid-template-columns: 1.8fr 1fr;
@@ -124,7 +131,7 @@ footer a {
     }
 }
 
-/* ======== 1920px (Широкі монітори) ======== */
+/* 1201px — 1920px */
 @media (min-width: 1201px) and (max-width: 1920px) {
     body {
         font-size: 19px;
@@ -135,7 +142,7 @@ footer a {
     }
 }
 
-/* ======== 1920+ (дуже широкі) ======== */
+/* 1921px+ */
 @media (min-width: 1921px) {
     body {
         font-size: 20px;
@@ -145,5 +152,7 @@ footer a {
         margin: 0 auto;
     }
 }
+
+
 
 
